@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Character encoding and viewport settings for proper display on different devices -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Page title displayed in the browser tab -->
+  <title>Enhanced Chatbot</title>
+
+  <!-- Conversation Style -->
+  <style>
+    .user {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 10px;
+    }
+
+    .user span {
+      background-color: #7e5bef;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 20px;
+      max-width: 80%;
+      word-wrap: break-word;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Bot's message */
+    .bot {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 10px;
+    }
+
+    .bot span {
+      background-color: #e5e7eb;
+      color: #1f2937;
+      padding: 8px 15px;
+      border-radius: 20px;
+      max-width: 80%;
+      word-wrap: break-word;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Chat header styling */
+    .header {
+      background-color: #2563eb;
+      padding: 15px;
+      color: white;
+      text-align: center;
+      border-radius: 10px 10px 0 0;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+  </style>
+
+  <!-- Including Tailwind CSS from the CDN to style the page -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome for icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+
+<body class="bg-gray-100 flex justify-center items-center h-screen m-0 p-0">
+  <!-- Main chat container with a maximum width, background color, borders, and shadow -->
+  <div
+    class="chat-container w-full max-w-xl bg-white border border-gray-300 rounded-lg shadow-lg flex flex-col overflow-hidden h-full">
+
+    <!-- Header with a beautiful title -->
+    <div class="header bg-purple-400 flex justify-between items-center">
+      <div>EduBox Assistant</div> ||
+      <div>Asaduzzaman Rakib</div>
+    </div>
+
+    <!-- Messages box that takes up the remaining space, is scrollable, and has padding -->
+    <div class="messages flex-1 overflow-y-auto p-4 bg-gray-50 border-b border-gray-300 space-y-4" id="messages">
+
+      <!-- User's message: aligned to the right with blue background and white text -->
+      <div
+        class="message user flex justify-start items-center max-w-[40%] bg-purple-500 text-white p-3 rounded-3xl text-center shadow-md">
+        <p class="text-sm">Hi, how can I help you?</p>
+      </div>
+    </div>
+
+    <!-- Input section at the bottom for user to type messages -->
+    <div class="input-container flex p-3 bg-white border-t border-gray-300 gap-3 items-center justify-between">
+
+      <!-- Attach File Icon -->
+      <button id="attachBtn" class="text-gray-600 hover:text-gray-800">
+        <i class="fas fa-paperclip text-lg"></i>
+      </button>
+
+      <!-- Emoji Icon -->
+      <button id="emojiBtn" class="text-gray-600 hover:text-gray-800">
+        <i class="fas fa-smile text-lg"></i>
+      </button>
+
+      <!-- Text input field where the user can type their message -->
+      <input type="text" id="userInput" placeholder="Type your message..."
+        class="flex-1 p-3 border border-gray-300 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-300">
+
+      <!-- Send Button -->
+      <button id="sendBtn"
+        class="px-4 py-2 bg-purple-500 text-white rounded-full text-sm hover:bg-green-600 transition duration-300">Send</button>
+    </div>
+  </div>
+
+  <!-- Linking external JavaScript file (for handling interactivity and functionality) -->
+  <script src="script.js"></script>
+</body>
+
+</html>
